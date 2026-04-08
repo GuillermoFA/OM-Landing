@@ -162,14 +162,22 @@ export function Values() {
             </div>
 
             {/* Law 21.015 Badge */}
-            <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-4 text-center">
-              <p className="text-sm text-muted-foreground">
-                Somos una empresa acogida a la{" "}
-                <strong className="text-primary">Ley N.º 21.015</strong>
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Ley de Inclusión Laboral de Personas con Discapacidad
-              </p>
+            <div className="mt-6 bg-white overflow-hidden border border-primary/20 rounded-xl shadow-md p-1 group">
+              <div className="relative w-full h-32 md:h-40 bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/images/2274d21af7b92425e84d39bab2ae21b9-768x508.jpg" 
+                  alt="Ley de Inclusión Laboral 21.015" 
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="text-center mt-3 mb-2">
+                <p className="text-sm font-medium text-foreground">
+                  Empresa acogida a la <span className="text-primary font-bold">Ley N.º 21.015</span>
+                </p>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Promovemos la inclusión laboral
+                </p>
+              </div>
             </div>
           </div>
         </div>

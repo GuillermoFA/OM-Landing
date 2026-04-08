@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Wrench, Circle, Sparkles, Flame, Zap, Truck } from "lucide-react"
+import { ArrowRight, Wrench, Circle, Sparkles, Flame, Zap, Truck, Anchor } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const services = [
@@ -41,6 +41,12 @@ const services = [
     icon: Truck,
     title: "Transporte",
     description: "Logística y transporte de personal y equipos para operaciones en terreno.",
+  },
+  {
+    number: "07",
+    icon: Anchor,
+    title: "Maniobras de Izaje de Carga",
+    description: "Operaciones seguras y especializadas para el levantamiento y movimiento de cargas pesadas.",
   },
 ]
 

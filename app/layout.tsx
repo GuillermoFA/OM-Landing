@@ -7,25 +7,17 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'OM Ltda - Ingeniería y Servicios para Minería',
-  description: 'Soluciones integrales de ingeniería para la industria minera en el norte de Chile. Más de 18 años de experiencia en estructura, HDPE, soldadura y más.',
+  title: 'OM - Servicios e Ingenieria',
+  description: 'OM LTDA: Soluciones mineras e ingeniería en Antofagasta. Limpieza y mantenimiento industrial de calidad... ¡Descubre más y contáctanos!',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+        url: '/images/logo_OM-removebg-preview.png',
+        type: 'image/png',
+      }
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/logo_OM-removebg-preview.png',
   },
 }
 

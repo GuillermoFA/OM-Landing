@@ -44,15 +44,24 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-white backdrop-blur-md shadow-sm" : "bg-white backdrop-blur-md shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="#inicio" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-lg lg:text-xl transition-transform group-hover:scale-105">
-              OM
+            <div className="relative w-12 h-12 lg:w-16 lg:h-16 shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <img 
+                src="/images/LOGO HIGH DEFINITION.png" 
+                alt="OM LTDA Logo" 
+                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img 
+                src="/images/renovable-logo.PNG" 
+                alt="OM Renovable Logo" 
+                className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
             </div>
             <div className="hidden sm:block">
               <p className="font-bold text-foreground text-sm lg:text-base">OM LTDA</p>

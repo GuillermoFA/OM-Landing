@@ -159,11 +159,6 @@ export function Hero() {
 
         {/* Services Marquee */}
         <div className="py-8 border-t border-border">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-sm text-muted-foreground uppercase tracking-wider">Scroll</span>
-            <ChevronDown className="h-4 w-4 text-primary animate-bounce" />
-          </div>
-          
           <div className="overflow-hidden">
             <div className="flex animate-marquee">
               {[...services, ...services].map((service, index) => (
