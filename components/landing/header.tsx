@@ -43,12 +43,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white backdrop-blur-md shadow-sm" : "bg-white backdrop-blur-md shadow-sm"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border py-2 lg:py-1 transition-all duration-300"
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-12 lg:h-16">
           {/* Logo */}
           <Link href="#inicio" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 lg:w-16 lg:h-16 shrink-0 transition-transform duration-300 group-hover:scale-105">
@@ -64,29 +62,32 @@ export function Header() {
               />
             </div>
             <div className="hidden sm:block">
-              <p className="font-bold text-foreground text-sm lg:text-base">OM LTDA</p>
+              <p className="font-bold text-sm lg:text-lg text-foreground">OM LTDA</p>
               <p className="text-xs text-muted-foreground">Ingeniería y Servicios</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`px-4 py-2 text-sm font-medium transition-colors relative ${
-                  activeSection === link.href.replace("#", "")
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.name}
-                {activeSection === link.href.replace("#", "") && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace("#", "")
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-medium transition-colors relative ${
+                    isActive
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+                  )}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* CTA Button */}

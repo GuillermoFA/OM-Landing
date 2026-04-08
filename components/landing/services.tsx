@@ -93,15 +93,6 @@ export function Services() {
               Ofrecemos servicios especializados con los más altos estándares de calidad y seguridad para satisfacer las necesidades de la industria minera.
             </p>
           </div>
-          <Button
-            asChild
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 shrink-0"
-          >
-            <Link href="#contacto">
-              Solicitar cotización
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
 
         {/* Services Grid */}
@@ -126,16 +117,6 @@ export function Services() {
               <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground">
-            ¿Necesitas un servicio personalizado?{" "}
-            <Link href="#contacto" className="text-primary font-medium hover:underline">
-              Contáctanos para una solución a medida
-            </Link>
-          </p>
         </div>
       </div>
     </section>
