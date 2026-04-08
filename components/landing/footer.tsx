@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Mail, MessageCircle, ArrowUpRight, Heart } from "lucide-react"
+import { Instagram, Mail, MessageCircle, ArrowUpRight, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
@@ -23,7 +23,7 @@ const services = [
 ]
 
 const socials = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/om_ltda/", label: "Instagram" },
   { icon: Mail, href: "mailto:Gerencia@omingenieria.cl", label: "Email" },
   { icon: MessageCircle, href: "https://wa.me/56942815213", label: "WhatsApp" },
 ]
@@ -132,9 +132,18 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} <span className="font-medium text-foreground">OM Ingeniería</span>. Todos los derechos reservados.
           </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Hecho con <Heart className="h-4 w-4 text-primary fill-primary" /> en Antofagasta
-          </p>
+          <div className="text-sm text-muted-foreground flex items-center gap-2">
+            Elaborador por Guillermo Fuentes 
+            <a 
+              href="https://cl.linkedin.com/in/guillermofuentesavila" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-primary transition-colors hover:-translate-y-0.5 transform duration-300"
+              title="LinkedIn de Guillermo Fuentes"
+            >
+              <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

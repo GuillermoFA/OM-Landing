@@ -1,19 +1,19 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Award, Building2, CheckCircle, Sun, Recycle, Leaf, FileText, Download } from "lucide-react"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { Award, Building2, CheckCircle, Sun, Recycle, Leaf, ExternalLink } from "lucide-react"
+
+const GoogleDriveIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 87.3 78" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M29.07 0L0 50.53L29.07 101.07H87.21L58.14 50.53L29.07 0Z" fill="#1ea362"/>
+    <path d="M29.07 0L58.14 0L87.21 50.53L58.14 50.53L29.07 0Z" fill="#4688f4"/>
+    <path d="M87.21 50.53L58.14 101.07H0L29.07 50.53H87.21Z" fill="#ffba00"/>
+  </svg>
+)
 
 const certifications = [
   {
-    image: "/images/sicep.jpg",
+    image: "/images/sicep.png",
     badge: "VERIFICADO",
     title: "Certificado SICEP",
     description: "Sistema de Certificación de Competencias",
@@ -105,7 +105,7 @@ export function Certifications() {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`shrink-0 flex items-center justify-center overflow-hidden ${cert.image ? 'w-24 h-20 bg-white rounded-xl border-2 border-primary/20 p-2' : 'w-14 h-14 bg-primary rounded-xl'}`}>
+                    <div className={`shrink-0 flex items-center justify-center overflow-hidden ${cert.image ? 'w-40 h-28 bg-white rounded-xl border-2 border-primary/20 p-2' : 'w-14 h-14 bg-primary rounded-xl'}`}>
                       {cert.image ? (
                         <img src={cert.image} alt={cert.title} className="w-full h-full object-contain" />
                       ) : (
@@ -114,11 +114,11 @@ export function Certifications() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <CheckCircle className="h-4 w-4 text-primary" />
-                        <span className="text-xs font-semibold text-primary uppercase tracking-wider">{cert.badge}</span>
+                        <CheckCircle className="h-5 w-5 text-primary" />
+                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">{cert.badge}</span>
                       </div>
                       <h3 className="text-lg font-bold text-foreground">{cert.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">{cert.description}</p>
+                      <p className="text-base lg:text-sm text-muted-foreground mt-1">{cert.description}</p>
                     </div>
                   </div>
                   {/* Decorative element */}
@@ -141,8 +141,8 @@ export function Certifications() {
                 <Recycle className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <span className="text-xs text-muted-foreground">Compromiso Ambiental</span>
-                <h3 className="text-xl font-bold text-foreground">Sustentabilidad</h3>
+                <span className="text-sm text-muted-foreground font-medium">Compromiso Ambiental</span>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">Sustentabilidad</h3>
               </div>
             </div>
 
@@ -157,65 +157,37 @@ export function Certifications() {
                     }`}
                     style={{ transitionDelay: `${400 + index * 100}ms` }}
                   >
-                    <Icon className="h-6 w-6 text-primary mb-2" />
-                    <p className="text-2xl lg:text-3xl font-bold text-foreground">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
+                    <Icon className="h-8 w-8 text-primary mb-2" />
+                    <p className="text-3xl lg:text-4xl font-bold text-foreground">{stat.value}</p>
+                    <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
                     <div className="mt-3 pt-3 border-t border-border">
-                      <p className="text-sm font-medium text-foreground">{stat.title}</p>
-                      <p className="text-xs text-muted-foreground mt-1">{stat.description}</p>
+                      <p className="text-base lg:text-sm font-semibold text-foreground">{stat.title}</p>
+                      <p className="text-base lg:text-xs text-muted-foreground mt-1">{stat.description}</p>
                     </div>
                   </div>
                 )
               })}
             </div>
 
-            {/* PPTX/PDF Modal Card for Sustainability Report */}
+            {/* External Google Drive Link */}
             <div className="mt-8 pt-6 border-t border-border flex justify-center">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button className="group relative w-full overflow-hidden rounded-xl bg-primary/5 border border-primary/20 p-4 transition-all hover:bg-primary/10 hover:border-primary/40 flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                      <FileText className="h-6 w-6" />
-                    </div>
-                    <div className="text-left flex-1">
-                      <h4 className="font-bold text-foreground">Reporte Sostenibilidad Oyarzun</h4>
-                      <p className="text-xs text-muted-foreground mt-1">Haz clic para ver y descargar el reporte</p>
-                    </div>
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] md:max-w-[600px] bg-background">
-                  <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2">
-                      <Leaf className="w-5 h-5 text-primary" />
-                      Reporte de Sostenibilidad Oyarzun
-                    </DialogTitle>
-                    <DialogDescription>
-                      Documento estratégico sobre nuestras prácticas y compromisos ambientales.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
-                    <div className="aspect-video bg-secondary/50 rounded-lg flex flex-col items-center justify-center p-6 border-2 border-dashed border-border text-center relative overflow-hidden">
-                      {/* Generando un fondo semi-transparente como si fuera una portada */}
-                      <div className="absolute inset-0 bg-primary/5"></div>
-                      <FileText className="w-16 h-16 text-primary mb-4 relative z-10" />
-                      <h3 className="text-xl font-bold relative z-10">Reporte Final</h3>
-                      <p className="text-sm text-muted-foreground mt-2 max-w-sm relative z-10">
-                        Descubre en detalle todas las políticas que estamos adoptando para reducir la huella de carbono y potenciar la energía limpia.
-                      </p>
-                    </div>
-                    <div className="flex justify-end gap-3">
-                      <a 
-                        href="/Reporte SostenibilidadOyarzun final.pptx" 
-                        download
-                        className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-                      >
-                        <Download className="mr-2 h-4 w-4" />
-                        Descargar Reporte
-                      </a>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <a 
+                href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-full overflow-hidden rounded-xl bg-primary/5 border border-primary/20 p-4 transition-all hover:bg-primary/10 hover:border-primary/40 flex items-center gap-4 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform p-2 border border-border">
+                  <GoogleDriveIcon className="w-full h-full" />
+                </div>
+                <div className="text-left flex-1">
+                  <h4 className="font-bold text-base lg:text-lg text-foreground flex items-center gap-2">
+                    Reporte Sostenibilidad Oyarzun
+                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </h4>
+                  <p className="text-base lg:text-sm text-muted-foreground mt-1">Haz clic para ver el reporte en Google Drive</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>

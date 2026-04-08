@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { MapPin, Phone, Mail, MessageCircle, ExternalLink, Send } from "lucide-react"
+import { MapPin, Phone, Mail, MessageCircle, ExternalLink, Send, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const contactInfo = [
@@ -99,8 +99,8 @@ export function Contact() {
                       </div>
                       <ExternalLink className="h-4 w-4 text-primary-foreground/50 group-hover:text-primary-foreground transition-colors" />
                     </div>
-                    <p className="text-xs text-primary-foreground/60">{info.label}</p>
-                    <p className="text-sm font-medium text-primary-foreground mt-1">{info.value}</p>
+                    <p className="text-sm text-primary-foreground/70">{info.label}</p>
+                    <p className="text-base font-medium text-primary-foreground mt-1">{info.value}</p>
                   </a>
                 )
               })}
@@ -154,9 +154,9 @@ export function Contact() {
               </div>
               
               {/* Map Footer */}
-              <div className="p-4 bg-card">
+              <div className="p-4 bg-card flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <div>
@@ -164,6 +164,16 @@ export function Contact() {
                     <p className="text-sm text-muted-foreground">Chabunco 10017, Antofagasta</p>
                   </div>
                 </div>
+
+                <a
+                  href="https://www.instagram.com/om_ltda/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-lg transition-all shrink-0 ml-4"
+                  title="Síguenos en Instagram"
+                >
+                  <Instagram className="h-6 w-6 text-white" />
+                </a>
               </div>
             </div>
           </div>

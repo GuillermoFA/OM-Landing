@@ -48,12 +48,12 @@ export function About() {
               Desde <span className="text-primary">2006</span> al servicio de la minería
             </h2>
 
-            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Fundada por dos hermanos apasionados por el sector minero, nuestra empresa se ha consolidado como líder en el mercado gracias a nuestra{" "}
               <strong className="text-foreground font-semibold">dedicación a la calidad, seguridad y compromiso con la excelencia.</strong>
             </p>
 
-            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Hemos superado desafíos y obtenido contratos con importantes empresas mineras en la región de Antofagasta, demostrando nuestra capacidad para enfrentar los retos únicos de la industria minera y los desiertos de la región.
             </p>
 
@@ -91,7 +91,7 @@ export function About() {
                 </div>
                 <h3 className="text-xl font-bold">Misión</h3>
               </div>
-              <p className="text-lg text-primary-foreground/90 leading-relaxed">
+              <p className="text-base text-primary-foreground/90 leading-relaxed">
                 Brindar servicios de alta calidad y valor agregado a la industria minera, a través de soluciones innovadoras y un enfoque integral. Satisfaciendo las necesidades de nuestros clientes, priorizando la seguridad, eficiencia y respeto por el medio ambiente.
               </p>
             </div>
@@ -108,7 +108,7 @@ export function About() {
                 </div>
                 <h3 className="text-xl font-bold text-foreground">Visión</h3>
               </div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 Ser líderes en servicios integrales para la industria minera, reconocidos por nuestra calidad, excelencia, confiabilidad y compromiso con la seguridad, promoviendo la reducción de emisiones y el desarrollo sostenible.
               </p>
               {/* Decorative circle */}

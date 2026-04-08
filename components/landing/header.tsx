@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronRight } from "lucide-react"
+import { Menu, X, ChevronRight, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -90,8 +90,17 @@ export function Header() {
             })}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* Contact and CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a 
+              href="https://www.instagram.com/om_ltda/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-transparent hover:bg-primary/10 rounded-full p-2 text-muted-foreground hover:text-primary transition-colors"
+              title="Síguenos en Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
               <Link href="#contacto">
                 Contáctanos
@@ -122,7 +131,7 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-4 rounded-lg text-base md:text-lg font-medium transition-colors ${
                   activeSection === link.href.replace("#", "")
                     ? "bg-primary/10 text-primary"
                     : "text-muted-foreground hover:bg-secondary hover:text-foreground"
@@ -131,10 +140,10 @@ export function Header() {
                 {link.name}
               </Link>
             ))}
-            <Button asChild className="mt-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+            <Button asChild className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-12 text-base">
               <Link href="#contacto" onClick={() => setIsOpen(false)}>
                 Contáctanos
-                <ChevronRight className="ml-1 h-4 w-4" />
+                <ChevronRight className="ml-1 h-5 w-5" />
               </Link>
             </Button>
           </nav>

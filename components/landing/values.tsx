@@ -142,7 +142,7 @@ export function Values() {
                   <h3 className="text-xl lg:text-2xl font-bold text-foreground">{values[activeIndex].title}</h3>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-base lg:text-lg">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 {values[activeIndex].description}
               </p>
               
@@ -162,20 +162,20 @@ export function Values() {
             </div>
 
             {/* Law 21.015 Badge */}
-            <div className="mt-6 bg-white overflow-hidden border border-primary/20 rounded-xl shadow-md p-1 group">
-              <div className="relative w-full h-32 md:h-40 bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="mt-8 bg-white overflow-hidden border border-primary/20 rounded-xl shadow-lg p-2 group">
+              <div className="relative w-full h-48 md:h-64 bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
                 <img 
                   src="/images/2274d21af7b92425e84d39bab2ae21b9-768x508.jpg" 
                   alt="Ley de Inclusión Laboral 21.015" 
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="text-center mt-3 mb-2">
-                <p className="text-sm font-medium text-foreground">
+              <div className="text-center mt-4 mb-3">
+                <p className="text-base md:text-lg font-medium text-foreground">
                   Empresa acogida a la <span className="text-primary font-bold">Ley N.º 21.015</span>
                 </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Promovemos la inclusión laboral
+                <p className="text-sm md:text-base text-muted-foreground mt-1">
+                  Promovemos la inclusión laboral de personas con discapacidad
                 </p>
               </div>
             </div>
