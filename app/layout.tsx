@@ -7,6 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://omingenieria.cl"),
   title: "OM LTDA - Ingeniería y Servicios Mineros en Antofagasta",
   description: "OM LTDA: Expertos en soluciones integrales de ingeniería para la industria minera desde 2006. Estructura y montaje, HDPE, aseo industrial, soldadura técnica y mantenimiento.",
   keywords: [
