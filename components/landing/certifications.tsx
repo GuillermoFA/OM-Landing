@@ -104,8 +104,8 @@ export function Certifications() {
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className={`shrink-0 flex items-center justify-center overflow-hidden ${cert.image ? 'w-40 h-28 bg-white rounded-xl border-2 border-primary/20 p-2' : 'w-14 h-14 bg-primary rounded-xl'}`}>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div className={`shrink-0 flex items-center justify-center overflow-hidden mx-auto sm:mx-0 ${cert.image ? 'w-full sm:w-40 h-28 sm:h-28 bg-white rounded-xl border-2 border-primary/20 p-2' : 'w-14 h-14 bg-primary rounded-xl'}`}>
                       {cert.image ? (
                         <img src={cert.image} alt={cert.title} className="w-full h-full object-contain" />
                       ) : (
@@ -137,16 +137,16 @@ export function Certifications() {
             }`}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                <Recycle className="h-6 w-6 text-primary" />
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+                <img src="/images/renovable-logo.PNG" alt="Logo de OM ltda" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
               </div>
               <div>
-                <span className="text-sm text-muted-foreground font-medium">Compromiso Ambiental</span>
                 <h3 className="text-xl md:text-2xl font-bold text-foreground">Sustentabilidad</h3>
+                <span className="text-sm text-muted-foreground font-medium">Compromiso Ambiental</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {sustainabilityStats.map((stat, index) => {
                 const Icon = stat.icon
                 return (
@@ -175,13 +175,13 @@ export function Certifications() {
                 href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative w-full overflow-hidden rounded-xl bg-primary/5 border border-primary/20 p-4 transition-all hover:bg-primary/10 hover:border-primary/40 flex items-center gap-4 hover:-translate-y-1 hover:shadow-md"
+                className="group relative w-full overflow-hidden rounded-xl bg-primary/5 border border-primary/20 p-4 transition-all hover:bg-primary/10 hover:border-primary/40 flex flex-col sm:flex-row items-center sm:items-center gap-4 hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform p-2 border border-border">
+                <div className="w-16 h-16 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform p-3 sm:p-2 border border-border">
                   <GoogleDriveIcon className="w-full h-full" />
                 </div>
-                <div className="text-left flex-1">
-                  <h4 className="font-bold text-base lg:text-lg text-foreground flex items-center gap-2">
+                <div className="text-center sm:text-left flex-1 min-w-0">
+                  <h4 className="font-bold text-base lg:text-lg text-foreground flex items-center justify-center sm:justify-start gap-2 break-words">
                     Reporte Sostenibilidad Oyarzun
                     <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </h4>

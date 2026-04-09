@@ -10,7 +10,7 @@ import { Footer } from "@/components/landing/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden w-full flex flex-col">
       {/* Datos Estructurados JSON-LD SEO */}
       <script
         type="application/ld+json"

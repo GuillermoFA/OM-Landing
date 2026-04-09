@@ -32,7 +32,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-white border-t border-border">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Main Footer */}
         <div className="py-12 lg:py-16">
@@ -40,9 +40,7 @@ export function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <Link href="#inicio" className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl">
-                  OM
-                </div>
+                <img src="/images/LOGO HIGH DEFINITION.png" alt="Logo de OM ltda" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
                 <div>
                   <p className="font-bold text-foreground">OM LTDA</p>
                   <p className="text-xs text-muted-foreground">Ingeniería y Servicios</p>
@@ -138,8 +136,8 @@ export function Footer() {
               href="https://cl.linkedin.com/in/guillermofuentesavila" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-muted-foreground hover:text-primary transition-colors hover:-translate-y-0.5 transform duration-300"
-              title="LinkedIn de Guillermo Fuentes"
+              className="hover:text-primary text-blue-600 transition-colors hover:-translate-y-0.5 transform duration-300"
+              title="LinkedIn Desarrollador"
             >
               <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
             </a>

@@ -89,11 +89,11 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="inicio" className="min-h-screen pt-16 lg:pt-[72px] relative flex flex-col bg-background">
+    <section id="inicio" className="min-h-screen pt-16 lg:pt-[72px] relative flex flex-col bg-background overflow-x-hidden">
       
       {/* Background Split */}
-      <div className="absolute inset-0 top-[72px] lg:top-[72px] z-0 flex flex-col lg:flex-row">
-        <div className="relative w-full lg:w-[60%] h-[50vh] lg:h-full overflow-hidden bg-zinc-900">
+      <div className="absolute inset-0 top-[64px] lg:top-[72px] z-0 flex flex-col lg:flex-row">
+        <div className="relative w-full lg:w-[60%] h-[55vh] lg:h-full overflow-hidden bg-zinc-900 border-b-2 lg:border-b-0 border-primary">
           {carouselImages.map((src, index) => (
             <img
               key={src}
@@ -112,9 +112,9 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10 flex-1 flex flex-col lg:flex-row w-full items-stretch">
         
         {/* Left Side: Title Container */}
-        <div className="w-full lg:w-[60%] flex flex-col justify-center py-16 lg:py-12 lg:pr-16 min-h-[50vh] lg:min-h-full">
+        <div className="w-full lg:w-[60%] flex flex-col justify-center py-12 sm:py-16 lg:py-12 lg:pr-16 min-h-[55vh] lg:min-h-full mt-4 lg:mt-0">
           <div className="space-y-6 max-w-2xl w-full text-left">
-            <h1 className="text-lg md:text-xl lg:text-4xl xl:text-5xl font-bold leading-tight text-white drop-shadow-md">
+            <h1 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-extrabold leading-tight text-white drop-shadow-md break-words max-w-full">
               Ingeniería de{" "}
               <span className="text-primary brightness-125">alto rendimiento</span>{" "}
               para minería
@@ -130,12 +130,12 @@ export function Hero() {
           <div className="max-w-xl w-full mx-auto lg:mx-0 space-y-10">
             
             {/* Lideres Badge with Pulsing Dot */}
-            <div className="inline-flex items-center gap-3 bg-secondary backdrop-blur-sm rounded-full px-5 py-2.5 shadow-sm border border-border/50 transition-all cursor-default w-fit">
-              <span className="relative flex h-3 w-3">
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-secondary backdrop-blur-sm rounded-2xl sm:rounded-full px-4 py-2.5 shadow-sm border border-border/50 transition-all cursor-default w-fit max-w-full">
+              <span className="relative flex h-3 w-3 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-80 duration-1000"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
-              <span className="text-sm font-semibold text-foreground tracking-wide">
+              <span className="text-xs sm:text-sm font-semibold text-foreground tracking-wide whitespace-normal text-left max-w-full flex-1 line-clamp-2 md:line-clamp-none">
                 Líderes en ingeniería minera desde 2006
               </span>
             </div>

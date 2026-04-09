@@ -131,8 +131,8 @@ export function FAQ() {
                     </div>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isOpen ? "max-h-48" : "max-h-0"
+                    className={`overflow-hidden transition-all duration-500 ${
+                      isOpen ? "max-h-[800px] overflow-y-auto" : "max-h-0"
                     }`}
                   >
                     <p className="px-5 pb-5 text-muted-foreground leading-relaxed pl-14">
