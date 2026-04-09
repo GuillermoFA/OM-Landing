@@ -131,7 +131,7 @@ export function Footer() {
             © {currentYear} <span className="font-medium text-foreground">OM Ingeniería</span>. Todos los derechos reservados.
           </p>
           <div className="text-sm text-muted-foreground flex items-center gap-2">
-            Elaborador por Guillermo Fuentes 
+            Elaborado por Guillermo Fuentes 
             <a 
               href="https://cl.linkedin.com/in/guillermofuentesavila" 
               target="_blank" 
