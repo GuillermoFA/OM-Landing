@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Trophy, Award, Star, CheckCircle2 } from "lucide-react"
+import { Trophy, Award, Star } from "lucide-react"
 
 const recognitions = [
   {
@@ -59,7 +59,7 @@ export function Recognitions() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {recognitions.map((item, index) => (
+          {recognitions.map((item) => (
             <div
               key={item.title}
               className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 transition-all duration-1000 ${
