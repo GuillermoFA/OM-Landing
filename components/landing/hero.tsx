@@ -126,7 +126,7 @@ export function Hero() {
         </div>
 
         {/* Right Side: Cards and Stats */}
-        <div className="w-full lg:w-[40%] bg-background lg:bg-transparent flex flex-col justify-center py-12 lg:py-12 lg:pl-10">
+        <div className="w-full lg:w-[40%] bg-background lg:bg-transparent flex flex-col justify-center py-12 lg:py-12 lg:pl-12">
           <div className="max-w-xl w-full mx-auto lg:mx-0 space-y-10">
             
             {/* Lideres Badge with Pulsing Dot */}
