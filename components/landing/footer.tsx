@@ -15,11 +15,13 @@ const navigation = [
 
 const services = [
   "Estructura y Montaje",
+  "Obras Civiles",
   "HDPE",
   "Aseo Industrial",
   "Soldadura",
   "Electricidad Industrial",
   "Transporte",
+  "Maniobras de Izaje",
 ]
 
 const socials = [
@@ -47,7 +49,7 @@ export function Footer() {
                 </div>
               </Link>
               <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-                Soluciones integrales de ingeniería para la industria minera en la región de Antofagasta desde 2006.
+                Expertos en ingeniería y servicios a la minería en Antofagasta. Soluciones integrales en obras civiles, montaje y mantenimiento industrial desde 2006.
               </p>
               {/* Social Links */}
               <div className="flex items-center gap-2">

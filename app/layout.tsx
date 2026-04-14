@@ -8,12 +8,13 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oyarzunmichea.cl"),
-  title: "OM LTDA - Ingeniería y Servicios Mineros en Antofagasta",
-  description: "OM LTDA: Expertos en soluciones integrales de ingeniería para la industria minera desde 2006. Estructura y montaje, HDPE, aseo industrial, soldadura técnica y mantenimiento.",
+  title: "OM LTDA | Ingeniería y Servicios a la Minería",
+  description: "OM LTDA: Expertos en ingeniería y servicios integrales para la minería desde 2006. Soluciones en estructura y montaje, trabajos civiles, HDPE, aseo industrial, soldadura, electricidad industrial, transporte y maniobras de izaje.",
   keywords: [
-    "OM LTDA", "Ingeniería Antofagasta", "Servicios mineros Chile", "Montaje estructural", 
-    "HDPE minería", "Aseo industrial Antofagasta", "Soldadura especializada",
-    "Mantenimiento minero", "Electricidad industrial", "Prevención de riesgos mineros"
+    "OM LTDA", "OM", "Ingeniería", "ingeniería y servicios", "servicios a la minería", "Ingeniería Antofagasta", 
+    "Servicios mineros Chile", "trabajos civiles", "obras civiles", "estructura y montaje", "Montaje estructural", 
+    "HDPE", "HDPE minería", "aseo industrial", "Aseo industrial Antofagasta", "soldadura", "Soldadura especializada",
+    "Mantenimiento minero", "electricidad industrial", "transporte", "maniobras de izaje de carga", "Prevención de riesgos mineros"
   ],
   authors: [{ name: "Guillermo Fuentes" }, { name: "OM LTDA" }],
   creator: "OM LTDA",
@@ -24,12 +25,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://oyarzunmichea.cl", // Sustituye por el dominio oficial real
+    canonical: "https://oyarzunmichea.cl",
   },
   openGraph: {
     title: "OM LTDA - Ingeniería de alto rendimiento para minería",
     description: "Soluciones integrales que impulsan la productividad y seguridad de tus operaciones mineras en el norte de Chile.",
-    url: "https://oyarzunmichea.cl", // Sustituye por el dominio real
+    url: "https://oyarzunmichea.cl",
     siteName: "OM Ingeniería y Servicios",
     images: [
       {

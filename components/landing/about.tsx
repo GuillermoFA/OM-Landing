@@ -49,12 +49,11 @@ export function About() {
             </h2>
 
             <p className="text-base text-muted-foreground leading-relaxed">
-              Fundada por dos hermanos apasionados por el sector minero, nuestra empresa se ha consolidado como líder en el mercado gracias a nuestra{" "}
-              <strong className="text-foreground font-semibold">dedicación a la calidad, seguridad y compromiso con la excelencia.</strong>
+              Fundada por dos hermanos apasionados por el sector minero, <strong className="text-foreground font-semibold">OM LTDA</strong> se ha consolidado como líder en el mercado de <strong className="text-foreground font-semibold">ingeniería y servicios a la minería</strong> gracias a nuestra dedicación a la calidad, seguridad y compromiso con la excelencia.
             </p>
 
             <p className="text-base text-muted-foreground leading-relaxed">
-              Hemos superado desafíos y obtenido contratos con importantes empresas mineras en la región de Antofagasta, demostrando nuestra capacidad para enfrentar los retos únicos de la industria minera y los desiertos de la región.
+              Hemos superado desafíos y obtenido contratos con importantes empresas mineras en la región de Antofagasta, demostrando nuestra capacidad técnica en <strong className="text-foreground font-semibold">obras civiles</strong>, montaje estructural y mantenimiento industrial para enfrentar los retos únicos de la industria minera.
             </p>
 
             {/* Responsabilidad Card */}

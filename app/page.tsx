@@ -4,6 +4,7 @@ import { About } from "@/components/landing/about"
 import { Services } from "@/components/landing/services"
 import { Values } from "@/components/landing/values"
 import { Certifications } from "@/components/landing/certifications"
+import { Recognitions } from "@/components/landing/recognitions"
 import { FAQ } from "@/components/landing/faq"
 import { Contact } from "@/components/landing/contact"
 import { Footer } from "@/components/landing/footer"
@@ -20,7 +21,7 @@ export default function Home() {
             "@type": "EngineeringBusiness",
             "name": "OM LTDA",
             "image": "https://omingenieria.cl/images/logo_OM-removebg-preview.png",
-            "description": "Expertos en soluciones integrales de ingeniería para la industria minera desde 2006 en Antofagasta, Chile.",
+            "description": "Expertos en ingeniería y servicios a la minería desde 2006. Especialistas en estructura y montaje, trabajos civiles, HDPE, aseo industrial y electricidad industrial en Antofagasta, Chile.",
             "url": "https://omingenieria.cl",
             "telephone": "+56552949303",
             "email": "Gerencia@omingenieria.cl",
@@ -44,6 +45,7 @@ export default function Home() {
       <Services />
       <Values />
       <Certifications />
+      <Recognitions />
       <FAQ />
       <Contact />
       <Footer />

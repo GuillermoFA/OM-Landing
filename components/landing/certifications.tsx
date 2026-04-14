@@ -1,15 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Award, Building2, CheckCircle, Sun, Recycle, Leaf, ExternalLink } from "lucide-react"
-
-const GoogleDriveIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 87.3 78" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M29.07 0L0 50.53L29.07 101.07H87.21L58.14 50.53L29.07 0Z" fill="#1ea362"/>
-    <path d="M29.07 0L58.14 0L87.21 50.53L58.14 50.53L29.07 0Z" fill="#4688f4"/>
-    <path d="M87.21 50.53L58.14 101.07H0L29.07 50.53H87.21Z" fill="#ffba00"/>
-  </svg>
-)
+import { Building2, CheckCircle, ExternalLink } from "lucide-react"
 
 const certifications = [
   {
@@ -23,30 +15,6 @@ const certifications = [
     badge: "VERIFICADO",
     title: "Asociación de Industriales de Antofagasta",
     description: "Miembro activo desde 2006",
-  },
-]
-
-const sustainabilityStats = [
-  {
-    icon: Sun,
-    value: "100%",
-    label: "Energía renovable",
-    title: "Energía Solar",
-    description: "Paneles solares en nuestras instalaciones",
-  },
-  {
-    icon: Recycle,
-    value: "85%",
-    label: "Residuos reciclados",
-    title: "Reciclaje",
-    description: "Programa integral de gestión de residuos",
-  },
-  {
-    icon: Leaf,
-    value: "0",
-    label: "Huella de carbono",
-    title: "Punto Energía Limpia",
-    description: "Certificación de uso de energías renovables",
   },
 ]
 
@@ -91,16 +59,16 @@ export function Certifications() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col gap-16 lg:gap-24">
           {/* Certifications Cards */}
-          <div className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {certifications.map((cert, index) => {
               const Icon = cert.icon
               return (
                 <div
                   key={cert.title}
                   className={`bg-card rounded-2xl p-6 shadow-sm border border-border transition-all duration-700 hover:shadow-lg ${
-                    isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
@@ -112,8 +80,8 @@ export function Certifications() {
                         cert.icon && <cert.icon className="h-7 w-7 text-primary-foreground" />
                       )}
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
+                    <div className="flex-1 text-center sm:text-left">
+                      <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
                         <CheckCircle className="h-5 w-5 text-primary" />
                         <span className="text-sm font-semibold text-primary uppercase tracking-wider">{cert.badge}</span>
                       </div>
@@ -122,7 +90,7 @@ export function Certifications() {
                     </div>
                   </div>
                   {/* Decorative element */}
-                  <div className="flex justify-end mt-2">
+                  <div className="hidden sm:flex justify-end mt-2">
                     <div className="w-16 h-16 bg-primary/5 rounded-full -mr-4 -mb-4" />
                   </div>
                 </div>
@@ -130,64 +98,91 @@ export function Certifications() {
             })}
           </div>
 
-          {/* Sustainability Card */}
-          <div
-            className={`bg-card rounded-2xl p-6 shadow-sm border border-border transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+          {/* Sustainability Block - Redesigned */}
+          <div 
+            className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                <img src="/images/renovable-logo.PNG" alt="Logo de OM ltda" className="w-12 h-12 lg:w-16 lg:h-16 object-contain" />
-              </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground">Sustentabilidad</h3>
-                <span className="text-sm text-muted-foreground font-medium">Compromiso Ambiental</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {sustainabilityStats.map((stat, index) => {
-                const Icon = stat.icon
-                return (
-                  <div
-                    key={stat.title}
-                    className={`bg-secondary/50 rounded-xl p-4 transition-all duration-500 hover:bg-secondary ${
-                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                    }`}
-                    style={{ transitionDelay: `${400 + index * 100}ms` }}
-                  >
-                    <Icon className="h-8 w-8 text-primary mb-2" />
-                    <p className="text-3xl lg:text-4xl font-bold text-foreground">{stat.value}</p>
-                    <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-                    <div className="mt-3 pt-3 border-t border-border">
-                      <p className="text-base lg:text-sm font-semibold text-foreground">{stat.title}</p>
-                      <p className="text-base lg:text-xs text-muted-foreground mt-1">{stat.description}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* External Google Drive Link */}
-            <div className="mt-8 pt-6 border-t border-border flex justify-center">
+            {/* Visual Preview Left */}
+            <div className="w-full lg:w-[45%] flex justify-center">
               <a 
                 href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative w-full overflow-hidden rounded-xl bg-primary/5 border border-primary/20 p-4 transition-all hover:bg-primary/10 hover:border-primary/40 flex flex-col sm:flex-row items-center sm:items-center gap-4 hover:-translate-y-1 hover:shadow-md"
+                className="relative w-full group cursor-pointer block"
               >
-                <div className="w-16 h-16 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform p-3 sm:p-2 border border-border">
-                  <GoogleDriveIcon className="w-full h-full" />
-                </div>
-                <div className="text-center sm:text-left flex-1 min-w-0">
-                  <h4 className="font-bold text-base lg:text-lg text-foreground flex items-center justify-center sm:justify-start gap-2 break-words">
-                    Reporte Sostenibilidad Oyarzun
-                    <ExternalLink className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </h4>
-                  <p className="text-base lg:text-sm text-muted-foreground mt-1">Haz clic para ver el reporte en Google Drive</p>
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all opacity-50" />
+                
+                {/* Image Container */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border transform transition-all duration-700 group-hover:-translate-y-2 group-hover:rotate-1 bg-white">
+                  <img 
+                    src="/images/report.png" 
+                    alt="Reporte de Sostenibilidad Oyarzun Michea" 
+                    className="w-full h-auto block"
+                  />
+                  {/* Overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Hover indicator */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="bg-white/90 backdrop-blur-sm p-4 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-500">
+                      <ExternalLink className="h-8 w-8 text-primary" />
+                    </div>
+                  </div>
                 </div>
               </a>
+            </div>
+
+            {/* Content Card Right */}
+            <div className="w-full lg:w-[55%]">
+              <div className="bg-card rounded-[2.5rem] p-8 lg:p-12 shadow-xl border border-border relative overflow-hidden h-full flex flex-col justify-center">
+                {/* Decorative Pattern */}
+                <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full -mr-24 -mt-24" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full -ml-16 -mb-16" />
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-8 text-center sm:text-left">
+                    <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 shadow-inner">
+                      <img 
+                        src="/images/renovable-logo.PNG" 
+                        alt="OM Sostenible" 
+                        className="w-14 h-14 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-1">Sustentabilidad</h3>
+                      <p className="text-primary font-semibold text-lg tracking-wide uppercase">Compromiso con el futuro</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6 mb-10 text-center sm:text-left">
+                    <h4 className="text-xl lg:text-2xl font-bold text-foreground leading-tight">
+                      Visualice nuestro impacto y visión estratégica
+                    </h4>
+                    <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto sm:mx-0">
+                      En Oyarzun Michea Ltda, integramos la responsabilidad ambiental y social en el corazón de nuestras operaciones mineras. 
+                      Descubra cómo estamos liderando el cambio hacia una industria más consciente y eficiente.
+                    </p>
+                  </div>
+
+                  <div className="flex justify-center sm:justify-start">
+                    <a 
+                      href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn relative inline-flex items-center gap-4 bg-primary text-primary-foreground px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary/95 transition-all hover:shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:-translate-y-1 active:scale-95 overflow-hidden"
+                    >
+                      <span className="relative z-10">Ver Reporte Detallado</span>
+                      <ExternalLink className="h-6 w-6 relative z-10 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      
+                      {/* Button shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

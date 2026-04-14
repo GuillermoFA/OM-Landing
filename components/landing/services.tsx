@@ -16,7 +16,7 @@ const services = [
     number: "01",
     icon: Wrench,
     title: "Estructura y Montaje",
-    description: "Fabricación e instalación de estructuras metálicas para proyectos mineros de alta complejidad.",
+    description: "Fabricación e instalación de estructuras metálicas, desarrollo de obras civiles y trabajos civiles para proyectos mineros de alta complejidad.",
     image: "/images/services/structure_montage.png"
   },
   {
@@ -59,7 +59,7 @@ const services = [
     icon: Anchor,
     title: "Maniobras de Izaje de Carga",
     description: "Operaciones seguras y especializadas para el levantamiento y movimiento de cargas pesadas.",
-    image: "/images/services/mechanical_industrial.png"
+    image: "/images/services/Imagen2.jpg"
   },
 ]
 

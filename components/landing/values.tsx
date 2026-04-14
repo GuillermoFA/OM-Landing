@@ -166,7 +166,7 @@ export function Values() {
               <div className="relative w-full h-48 md:h-64 bg-zinc-50 rounded-lg overflow-hidden flex items-center justify-center">
                 <img 
                   src="/images/2274d21af7b92425e84d39bab2ae21b9-768x508.jpg" 
-                  alt="Ley de Inclusión Laboral 21.015" 
+                  alt="OM LTDA - Compromiso con la Ley de Inclusión Laboral 21.015 en la industria minera" 
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

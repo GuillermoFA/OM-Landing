@@ -24,7 +24,7 @@ const services = [
 
 const carouselImages = [
   "/images/first-page/image-80.png",
-  "/images/first-page/om-services.jpeg",
+  "/images/first-page/truck.jpg",
   "/images/first-page/movil.jpg",
 ]
 
@@ -98,7 +98,7 @@ export function Hero() {
             <img
               key={src}
               src={src}
-              alt={`Hero Background ${index}`}
+              alt={index === 0 ? "OM LTDA - Ingeniería y servicios a la minería en Antofagasta" : index === 1 ? "Servicios de transporte y logística minera OM" : "Mantenimiento y obras civiles para la minería - OM LTDA"}
               className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                 index === bgIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
               }`}
@@ -136,7 +136,7 @@ export function Hero() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
               <span className="text-xs sm:text-sm font-semibold text-foreground tracking-wide whitespace-normal text-left max-w-full flex-1 line-clamp-2 md:line-clamp-none">
-                Líderes en ingeniería minera desde 2006
+                OM: Ingeniería y Servicios a la Minería desde 2006
               </span>
             </div>
 
