@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Building2, CheckCircle, ExternalLink } from "lucide-react"
+import { CheckCircle, ExternalLink } from "lucide-react"
 
 const certifications = [
   {
@@ -11,7 +11,7 @@ const certifications = [
     description: "Sistema de Certificación de Competencias",
   },
   {
-    icon: Building2,
+    image: "/images/antofagasta_industrial.jpg",
     badge: "VERIFICADO",
     title: "Asociación de Industriales de Antofagasta",
     description: "Miembro activo desde 2006",
@@ -63,7 +63,7 @@ export function Certifications() {
           {/* Certifications Cards */}
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {certifications.map((cert, index) => {
-              const Icon = cert.icon
+              const Icon = (cert as any).icon
               return (
                 <div
                   key={cert.title}
@@ -77,7 +77,7 @@ export function Certifications() {
                       {cert.image ? (
                         <img src={cert.image} alt={cert.title} className="w-full h-full object-contain" />
                       ) : (
-                        cert.icon && <cert.icon className="h-7 w-7 text-primary-foreground" />
+                        Icon && <Icon className="h-7 w-7 text-primary-foreground" />
                       )}
                     </div>
                     <div className="flex-1 text-center sm:text-left">
@@ -107,7 +107,7 @@ export function Certifications() {
             {/* Visual Preview Left */}
             <div className="w-full lg:w-[45%] flex justify-center">
               <a 
-                href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
+                href="https://docs.google.com/presentation/d/1xAoCPLRZV-F8upiTdixWs-uUcOUINyle/edit?slide=id.p1#slide=id.p1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative w-full group cursor-pointer block"
@@ -169,7 +169,7 @@ export function Certifications() {
 
                   <div className="flex justify-center sm:justify-start">
                     <a 
-                      href="https://docs.google.com/presentation/d/1kH1cz2iqgprbvPujb6ueeyiWjIh-Cmuj/edit?usp=sharing&ouid=103395888347565057644&rtpof=true&sd=true"
+                      href="https://docs.google.com/presentation/d/1xAoCPLRZV-F8upiTdixWs-uUcOUINyle/edit?slide=id.p1#slide=id.p1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group/btn relative inline-flex items-center gap-4 bg-primary text-primary-foreground px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary/95 transition-all hover:shadow-[0_20px_40px_-15px_rgba(var(--primary),0.3)] hover:-translate-y-1 active:scale-95 overflow-hidden"

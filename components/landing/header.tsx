@@ -43,7 +43,11 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border py-2 lg:py-1 transition-all duration-300"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-md border-b border-border py-2 shadow-sm" 
+          : "bg-transparent border-b border-white/10 py-4 lg:py-3"
+      }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-12 lg:h-16">
@@ -51,19 +55,14 @@ export function Header() {
           <Link href="#inicio" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 lg:w-16 lg:h-16 shrink-0 transition-transform duration-300 group-hover:scale-105">
               <img 
-                src="/images/LOGO HIGH DEFINITION.png" 
+                src="images/logo_OM-removebg-preview.png" 
                 alt="OM LTDA Logo" 
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
-              />
-              <img 
-                src="/images/renovable-logo.PNG" 
-                alt="OM Renovable Logo" 
-                className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className={`absolute inset-0 w-full h-full object-contain transition-all duration-300 ${!isScrolled ? "brightness-0 invert" : ""}`}
               />
             </div>
             <div className="hidden sm:block">
-              <p className="font-bold text-sm lg:text-lg text-foreground">OM LTDA</p>
-              <p className="text-xs text-muted-foreground">Ingeniería y Servicios</p>
+              <p className={`font-bold text-sm lg:text-lg transition-colors ${isScrolled ? "text-foreground" : "text-white drop-shadow-md"}`}>OM LTDA</p>
+              <p className={`text-xs transition-colors ${isScrolled ? "text-muted-foreground" : "text-zinc-300 drop-shadow-sm"}`}>Ingeniería y Servicios</p>
             </div>
           </Link>
 
@@ -77,13 +76,15 @@ export function Header() {
                   href={link.href}
                   className={`px-4 py-2 text-sm font-medium transition-colors relative ${
                     isActive
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-primary font-semibold"
+                      : isScrolled
+                        ? "text-muted-foreground hover:text-foreground"
+                        : "text-zinc-200 hover:text-white drop-shadow-sm"
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${isScrolled ? "bg-primary" : "bg-primary shadow-[0_0_8px_rgba(234,88,12,0.8)]"}`} />
                   )}
                 </Link>
               )
@@ -96,12 +97,14 @@ export function Header() {
               href="https://www.instagram.com/om_ltda/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-transparent hover:bg-primary/10 rounded-full p-2 text-muted-foreground hover:text-primary transition-colors"
+              className={`bg-transparent hover:bg-primary/10 rounded-full p-2 transition-colors ${
+                isScrolled ? "text-muted-foreground hover:text-primary" : "text-zinc-200 hover:text-white"
+              }`}
               title="Síguenos en Instagram"
             >
               <Instagram className="h-5 w-5" />
             </a>
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 shadow-lg shadow-primary/20">
               <Link href="#contacto">
                 Contáctanos
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -112,7 +115,9 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

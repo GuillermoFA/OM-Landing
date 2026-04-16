@@ -6,10 +6,12 @@ import { ArrowRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const stats = [
-  { value: "18+", label: "Años de experiencia", highlight: true },
-  { value: "100+", label: "Proyectos completados", highlight: false },
-  { value: "50+", label: "Clientes satisfechos", highlight: true },
-  { value: "24/7", label: "Soporte continuo", highlight: false },
+  { value: "18+", label: "Años en minería (Desde 2006)" },
+  { value: "360°", label: "Servicios integrales" },
+  { value: "100%", label: "Cobertura en Antofagasta" },
+  { value: "24/7", label: "Atención y respuesta oportuna" },
+  { value: "Pro", label: "Equipo técnico especializado" },
+  { value: "100%", label: "Seguridad y calidad garantizada" },
 ]
 
 const services = [
@@ -42,7 +44,7 @@ function AnimatedCounter({ value, delay = 0 }: { value: string; delay?: number }
             const numericPart = value.replace(/\D/g, "")
             const suffix = value.replace(/\d/g, "")
             
-            if (numericPart) {
+            if (numericPart && !value.includes("/")) {
               const target = parseInt(numericPart)
               const duration = 1500
               const steps = 30
@@ -91,22 +93,20 @@ export function Hero() {
   return (
     <section id="inicio" className="min-h-screen pt-16 lg:pt-[72px] relative flex flex-col bg-background overflow-x-hidden">
       
-      {/* Background Split */}
-      <div className="absolute inset-0 top-[64px] lg:top-[72px] z-0 flex flex-col lg:flex-row">
-        <div className="relative w-full lg:w-[60%] h-[55vh] lg:h-full overflow-hidden bg-zinc-900 border-b-2 lg:border-b-0 border-primary">
-          {carouselImages.map((src, index) => (
-            <img
-              key={src}
-              src={src}
-              alt={index === 0 ? "OM LTDA - Ingeniería y servicios a la minería en Antofagasta" : index === 1 ? "Servicios de transporte y logística minera OM" : "Mantenimiento y obras civiles para la minería - OM LTDA"}
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                index === bgIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
-              }`}
-            />
-          ))}
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="hidden lg:block w-[40%] h-full bg-background" />
+      {/* Background Full Width */}
+      <div className="absolute inset-0 top-0 z-0 overflow-hidden bg-zinc-900 border-b-2 lg:border-b-0 border-primary">
+        {carouselImages.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={index === 0 ? "OM LTDA - Ingeniería y servicios a la minería en Antofagasta" : index === 1 ? "Servicios de transporte y logística minera OM" : "Mantenimiento y obras civiles para la minería - OM LTDA"}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+              index === bgIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
+            }`}
+          />
+        ))}
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/65" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 flex-1 flex flex-col lg:flex-row w-full items-stretch">
@@ -126,16 +126,16 @@ export function Hero() {
         </div>
 
         {/* Right Side: Cards and Stats */}
-        <div className="w-full lg:w-[40%] bg-background lg:bg-transparent flex flex-col justify-center py-12 lg:py-12 lg:pl-12">
-          <div className="max-w-xl w-full mx-auto lg:mx-0 space-y-10">
+        <div className="w-full lg:w-[40%] bg-transparent flex flex-col justify-center py-12 lg:py-12 lg:pl-12">
+          <div className="max-w-xl w-full mx-auto lg:mx-0 space-y-10 bg-black/30 backdrop-blur-md p-6 lg:p-8 rounded-3xl border border-white/10 shadow-2xl">
             
             {/* Lideres Badge with Pulsing Dot */}
-            <div className="inline-flex items-center gap-2 sm:gap-3 bg-secondary backdrop-blur-sm rounded-2xl sm:rounded-full px-4 py-2.5 shadow-sm border border-border/50 transition-all cursor-default w-fit max-w-full">
+            <div className="inline-flex items-center gap-2 sm:gap-3 bg-black/40 backdrop-blur-sm rounded-2xl sm:rounded-full px-4 py-2.5 shadow-sm border border-white/20 transition-all cursor-default w-fit max-w-full">
               <span className="relative flex h-3 w-3 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-80 duration-1000"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
-              <span className="text-xs sm:text-sm font-semibold text-foreground tracking-wide whitespace-normal text-left max-w-full flex-1 line-clamp-2 md:line-clamp-none">
+              <span className="text-xs sm:text-sm font-semibold text-white tracking-wide whitespace-normal text-left max-w-full flex-1 line-clamp-2 md:line-clamp-none">
                 OM: Ingeniería y Servicios a la Minería desde 2006
               </span>
             </div>
@@ -156,10 +156,10 @@ export function Hero() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="flex-1 rounded-full h-14 text-base border-border hover:bg-secondary hover:text-black text-foreground transition-colors shadow-sm bg-background"
+                className="flex-1 rounded-full h-14 text-base border-white/20 hover:bg-white/10 hover:text-white text-white transition-colors shadow-sm bg-black/40"
               >
                 <Link href="#nosotros" className="flex items-center justify-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                     <Play className="h-3 w-3 text-primary ml-0.5" />
                   </span>
                   Conocer más
@@ -168,7 +168,7 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-4 sm:gap-6 w-full mt-6 border-t border-border/50 pt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-4 sm:gap-6 w-full mt-6 border-t border-white/10 pt-8">
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
@@ -178,7 +178,7 @@ export function Hero() {
                   <p className="text-3xl lg:text-4xl font-extrabold text-primary group-hover:drop-shadow-sm transition-all">
                     <AnimatedCounter value={stat.value} delay={index * 200} />
                   </p>
-                  <p className="text-sm font-medium text-muted-foreground mt-1">
+                  <p className="text-sm font-medium text-zinc-300 mt-1">
                     {stat.label}
                   </p>
                 </div>
