@@ -94,19 +94,20 @@ export function Hero() {
     <section id="inicio" className="min-h-screen pt-16 lg:pt-[72px] relative flex flex-col bg-background overflow-x-hidden">
       
       {/* Background Full Width */}
-      <div className="absolute inset-0 top-0 z-0 overflow-hidden bg-zinc-900 border-b-2 lg:border-b-0 border-primary">
+      <div className="absolute inset-0 top-0 z-0 overflow-hidden bg-zinc-900">
         {carouselImages.map((src, index) => (
           <img
             key={src}
             src={src}
             alt={index === 0 ? "OM LTDA - Ingeniería y servicios a la minería en Antofagasta" : index === 1 ? "Servicios de transporte y logística minera OM" : "Mantenimiento y obras civiles para la minería - OM LTDA"}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-              index === bgIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
+              index === bgIndex ? "opacity-100 scale-[1.02]" : "opacity-0 scale-100"
             }`}
+            style={{ transform: index === bgIndex ? "scale(1.02)" : "scale(1)" }}
           />
         ))}
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/55" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 flex-1 flex flex-col lg:flex-row w-full items-stretch">
