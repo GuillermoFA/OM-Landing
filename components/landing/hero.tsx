@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 const stats = [
   { value: "18+", label: "Años en minería (Desde 2006)" },
   { value: "360°", label: "Servicios integrales" },
-  { value: "100%", label: "Cobertura en Antofagasta" },
+  { value: "100%", label: "Cobertura en la región de Antofagasta" },
   { value: "24/7", label: "Atención y respuesta oportuna" },
   { value: "Pro", label: "Equipo técnico especializado" },
   { value: "100%", label: "Seguridad y calidad garantizada" },
