@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { ScrollToTop } from '@/components/landing/scroll-to-top'
+import { WhatsAppButton } from '@/components/landing/whatsapp-button'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -83,6 +84,7 @@ export default function RootLayout({
     <html lang="es" className="overflow-x-hidden max-w-[100vw]">
       <body className="font-sans antialiased overflow-x-hidden max-w-[100vw]">
         {children}
+        <WhatsAppButton />
         <ScrollToTop />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         {process.env.NODE_ENV === 'production' && <SpeedInsights />}
