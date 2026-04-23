@@ -118,10 +118,10 @@ export function Footer() {
                 asChild
                 className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-sm"
               >
-                <Link href="#contacto">
+                <a href="mailto:Gerencia@omingenieria.cl">
                   Solicitar cotización
                   <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
